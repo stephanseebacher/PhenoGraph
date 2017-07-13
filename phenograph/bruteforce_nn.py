@@ -13,7 +13,6 @@ from contextlib import closing
 from functools import partial
 import psutil
 
-
 def process_chunk(chunk, data, k, metric):
     d = cdist(chunk, data, metric=metric).astype('float32')
     p = np.argpartition(d, k).astype('int32')[:, :k]
